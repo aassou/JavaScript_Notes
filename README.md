@@ -1,0 +1,1 @@
+This repository contains my own ressources to learn Javascript
