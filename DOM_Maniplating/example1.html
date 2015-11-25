@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Example 1</title>
+	</head>
+	<body>
+		<blockquote>
+			<p id="myP">Un peu de texte, <a>un lien</a> et <strong>une portion en emphase</strong></p>
+		</blockquote>
+
+		<script>
+		var paragraph = document.getElementById('myP');
+		var blockquote = paragraph.parentNode;
+		var first = paragraph.firstChild;
+        var last  = paragraph.lastChild;
+		var firstElement = paragraph.firstElementChild;
+		var lastElement = paragraph.lastElementChild;
+		var childs = paragraph.childNodes;
+		
+		alert(first.nodeName.toLowerCase()); // shows #text
+		alert(last.nodeName.toLowerCase());  // shows strong
+		//data and nodeValue properties are applied only on #text elements
+		alert(first.nodeValue); // shows : Un peu de text
+		alert(last.firstChild.data);  // shows : Une portion en emphase
+		alert(firstElement.nodeName.toLowerCase()); // shows a
+		alert(lastElement.nodeName.toLowerCase());  // shows strong
+		alert(blockquote); // shows object HTMLQuoteElement
+		//nodeType returns a type number
+		alert(paragraph.nodeType + '\n\n' + paragraph.nodeName.toLowerCase());
+		//we have to use a loop to shows the childs array content
+		for (var i=0, c=childs.length; i<c; i++) {
+			//test if it's an HTML element
+			if ( childs[i].nodeType === 1 ) {
+				alert(childs[i].firstChild.data);
+			}
+			//else it's a text element
+			else {
+				alert(childs[i].data);
+			}
+		}
+		//see also -> nextSiblign, previousSibling, nextElementSibling, previousElementSibling
+		</script>
+	</body>
+</html>
