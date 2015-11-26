@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Example 2</title>
+	</head>
+	<body>
+		<h1>Create and insert HTML element using DOM</h1>
+		<div>
+			<p id="paragraph">This is a text, <a>a link</a> and <strong>a strong text</strong> </p>
+		</div>
+
+		<script>
+			//create the element
+			var link = document.createElement('a');
+			//set element attributes
+			link.id = "link-aljazeera-english";
+			link.href = "http://aljazeera.com";
+			link.title = "Al Jazeera English News";
+			link.setAttribute('target', '_blank');
+			link.appendChild(document.createTextNode('Al Jazeera News'));
+			//insert and append the element
+			document.getElementById('paragraph').appendChild(link);
+			//create a new link using cloneNode()
+			var link2 = link.cloneNode(true);
+			link2.id = "link-aljazeera-arabic";
+			link2.href = "http://aljazeera.net";
+			link2.title = "الجزيرة للاخبار";
+			//link2.appendChild(document.createTextNode('الجزيرة للاخبار'));
+			document.getElementById('paragraph').appendChild(link2);
+			document.getElementById('link-aljazeera-arabic').textContent = 'الجزيرة للاخبار';
+			//see also : replaceChild(newElement, elementToReplace); removeChild(elementToRemove);
+			//           hasChildNodes(); insertBefore(elementToInsert, beforeThisElement);
+		</script>
+	</body>
+</html>
