@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Ex2 - MiniTP-1</title>
+	</head>
+	<body>
+		<script>
+			var div = document.createElement('div');
+			div.id = "divTP2";
+			
+			var textNodes = [
+				document.createTextNode('Langages basés sur ECMAScript :'),
+				document.createTextNode('JavaScript'),
+				document.createTextNode('JScript'),
+				document.createTextNode('ActionScript'),
+				document.createTextNode('EX4')
+			];
+			
+			var paragraph = document.createElement('p');
+			var ul = document.createElement('ul');
+			
+			for ( var i=1; i<5; i++ ) {
+				var li = document.createElement('li');
+				li.appendChild(textNodes[i]);
+				ul.appendChild(li);
+			}
+			paragraph.appendChild(textNodes[0]);
+			div.appendChild(paragraph);
+			div.appendChild(ul);
+			document.body.appendChild(div);
+		</script>
+	</body>
+</html>

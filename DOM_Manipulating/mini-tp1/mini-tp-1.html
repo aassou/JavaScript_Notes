@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Ex1 - MiniTP-1</title>
+	</head>
+	<body>
+		<script>
+			//create elements
+			var div = document.createElement('div');
+			div.id = "divTP1";
+
+			var textNodes = [
+				document.createTextNode('Le'),
+				document.createTextNode('World Wide Web Consortium'),
+				document.createTextNode(', abrégé par le sigle '),
+				document.createTextNode('W3C'),
+				document.createTextNode(', est un '),
+				document.createTextNode('organisme de standardisation '),
+				document.createTextNode('à but non-lucratif chargé de promouvoir la compatibilité des technologies du '),
+				document.createTextNode('World Wide Web'),
+				document.createTextNode('.')
+			]
+
+			var strong1 = document.createElement('strong');
+			var strong2 = strong1.cloneNode(true);
+
+			var link1 = document.createElement('a');
+			var link2 = document.createElement('a');
+
+			//set attributes
+			link1.href = "http://fr.wikipedia.org/wiki/Organisme_de_normalisation";
+			link1.title = "Organisme de normalisation";
+			link2.href = "http://fr.wikipedia.org/wiki/World_Wide_Web";
+			link2.title = "World Wide Web";
+
+			//append elements to our document
+
+			strong1.appendChild(textNodes[1]);
+			strong2.appendChild(textNodes[3]);
+
+			link1.appendChild(textNodes[5]);
+			link2.appendChild(textNodes[7]);
+
+			div.appendChild(textNodes[0]);
+			div.appendChild(strong1);
+			div.appendChild(textNodes[2]);
+			div.appendChild(strong2);
+			div.appendChild(textNodes[4]);
+			div.appendChild(link1);
+			div.appendChild(textNodes[6]);
+			div.appendChild(link2);
+			div.appendChild(textNodes[8]);
+
+			document.body.appendChild(div);
+		</script>
+	</body>
+</html>
