@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>MiniTP-1 Ex3</title>
+	</head>
+	<body>
+		<script>
+      //main div
+      var mainDiv = document.createElement('div');
+      mainDiv.id = "divTP4";
+      //second div
+      var secondDiv = document.createElement('div');
+      secondDiv.style = "text-align: center";
+      //form
+      var form = document.createElement('form');
+      form.enctype = "multipart/form-data";
+      form.method = "post";
+      form.action = "upload.php";
+      //fieldset
+      var fieldset = document.createElement('fieldset');
+      //legend
+      var legend = document.createElement('legend');
+      var legendText = document.createTextNode('upload your file');
+      legend.appendChild(legendText);
+      //form elements
+      var label = document.createElement('label');
+      label.htmlFor = "inputUpload";
+      var labelText = document.createTextNode('File to upload');
+      label.appendChild(labelText);
+      //input
+      var firstInput = document.createElement('input');
+      firstInput.type = "file";
+      firstInput.name = "inputUpload";
+      firstInput.id = "inputUpload";
+      var secondInput = document.createElement('input');
+      secondInput.type = "submit";
+      secondInput.value = "Send file";
+      //br
+      var br1 = document.createElement('br');
+      var br2 = br1.cloneNode(true);
+
+      //appendChild to secondDiv
+      secondDiv.appendChild(label);
+      secondDiv.appendChild(firstInput);
+      secondDiv.appendChild(br1);
+      secondDiv.appendChild(br2);
+      secondDiv.appendChild(secondInput);
+
+      //appendChild to fieldset
+      fieldset.appendChild(legend);
+      fieldset.appendChild(secondDiv);
+
+      //appendChild to form
+      form.appendChild(fieldset);
+
+      //appendChild to mainDiv
+      mainDiv.appendChild(form);
+
+      //appendChild to body
+      document.body.appendChild(mainDiv);
+		</script>
+	</body>
+</html>

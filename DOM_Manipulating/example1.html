@@ -6,7 +6,6 @@
 		<blockquote>
 			<p id="paragraph">This is a text, <a>a link</a> and <strong>a strong text</strong></p>
 		</blockquote>
-
 		<script>
 		var paragraph = document.getElementById('paragraph');
 		var blockquote = paragraph.parentNode;
@@ -15,7 +14,7 @@
 		var firstElement = paragraph.firstElementChild;
 		var lastElement = paragraph.lastElementChild;
 		var childs = paragraph.childNodes;
-		
+
 		alert(first.nodeName.toLowerCase()); // shows #text
 		alert(last.nodeName.toLowerCase());  // shows strong
 		//data and nodeValue properties are applied only on #text elements
